@@ -10,8 +10,8 @@ vim.keymap.set("n", "n", "nzzzv")
 vim.keymap.set("n", "N", "Nzzzv")
 
 -- next greatest remap ever : asbjornHaland
-vim.keymap.set({"n", "v"}, "<leader>y", [["+y]])
-vim.keymap.set({"n", "v"}, "<leader>Y", [["+Y]])
+vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]])
+vim.keymap.set({ "n", "v" }, "<leader>Y", [["+Y]])
 
 vim.keymap.set("n", "Q", "<nop>")
 vim.keymap.set("n", "<leader>f", vim.lsp.buf.format)
