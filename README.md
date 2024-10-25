@@ -1,2 +1,3 @@
-# ptx-nvim-config
-Config for NEOVIM
+# PTX Neovim config
+
+My humble configuration for the NEOVIM. 
