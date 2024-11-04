@@ -87,7 +87,7 @@ return {
             },
         })
 
-        local opts = {buffer = true}
+        local opts = {buffer = false}
         vim.keymap.set('n', '<leader>gr', '<cmd>Telescope lsp_references<cr>', opts)
         vim.keymap.set('n', '<leader>gd', '<cmd>Telescope lsp_definitions<cr>', opts)
         vim.keymap.set('n', '<leader>gi', '<cmd>Telescope lsp_implementations<cr>', opts)
