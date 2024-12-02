@@ -36,7 +36,14 @@ return {
       handlers = {
         function(server_name) -- default handler (optional)
           require("lspconfig")[server_name].setup {
-            capabilities = capabilities
+            capabilities = capabilities,
+            settings = {
+              Lua = {
+                diagnostics = {
+                  globals = { "vim" },
+                },
+              },
+            },
           }
         end,
       }
@@ -52,10 +59,10 @@ return {
 
     ls.add_snippets("typescript", {
       lss("tecommand", {
-        lst({"import { ContextAwareException } from '@common/exceptions/context-aware.exception';"}),
-        lst({"", "import { Injectable } from '@nestjs/common';"}),
-        lst({"", "import { Either } from '@common/either';"}),
-        lst({"", "", "@Injectable()",  "export class " }),
+        lst({ "import { ContextAwareException } from '@common/exceptions/context-aware.exception';" }),
+        lst({ "", "import { Injectable } from '@nestjs/common';" }),
+        lst({ "", "import { Either } from '@common/either';" }),
+        lst({ "", "", "@Injectable()", "export class " }),
         lsi(1, "Command"),
         lst({ " {", "  constructor() {}" }),
         lst({ "", "  async execute(): Promise<Either<ContextAwareException, >> {", "  }" }),
@@ -67,10 +74,10 @@ return {
         lsi(1, "Dto"),
         lst({ " {", "  static create(data: Required<" }),
         lsrep(1),
-        lst( {">) {", "    return plainToInstance(" }),
+        lst({ ">) {", "    return plainToInstance(" }),
         lsrep(1),
-        lst( {", data);"}),
-        lst( {"", "  }", "}"}),
+        lst({ ", data);" }),
+        lst({ "", "  }", "}" }),
       }),
 
       lss("tenotimplementedexception", {
