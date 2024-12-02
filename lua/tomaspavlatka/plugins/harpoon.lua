@@ -1,17 +1,13 @@
 return {
   {
     "ThePrimeagen/harpoon",
-    config = function ()
-      local mark = require("harpoon.mark")
-      local ui = require("harpoon.ui")
-
-      vim.keymap.set("n", "<leader>a", mark.add_file)
-      vim.keymap.set("n", "<leader>bf", ui.toggle_quick_menu)
-
-      vim.keymap.set("n", "<C-j>", function() ui.nav_file(1) end)
-      vim.keymap.set("n", "<C-k>", function() ui.nav_file(2) end)
-      vim.keymap.set("n", "<C-l>", function() ui.nav_file(3) end)
-      vim.keymap.set("n", "<C-;>", function() ui.nav_file(4) end)
-    end
+    keys = {
+      { "<leader>a",  function() require("harpoon.mark").add_file() end,        mode = { "n" } },
+      { "<leader>gh", function() require("harpoon.ui").toggle_quick_menu() end, mode = { "n" } },
+      { "<C-j>",      function() require("harpoon.ui").nav_file(1) end,         mode = { "n" } },
+      { "<C-k>",      function() require("harpoon.ui").nav_file(2) end,         mode = { "n" } },
+      { "<C-l>",      function() require("harpoon.ui").nav_file(3) end,         mode = { "n" } },
+      { "<C-;>",      function() require("harpoon.ui").nav_file(4) end,         mode = { "n" } },
+    }
   }
 }

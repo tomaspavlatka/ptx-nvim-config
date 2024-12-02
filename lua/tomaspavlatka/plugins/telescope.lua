@@ -19,12 +19,17 @@ return {
   },
   keys = {
     {
-      '<leader>ff',
+      '<leader>pf',
       function() require("telescope.builtin").find_files() end,
       mode = { "n" }
     },
     {
-      '<leader>pf',
+      '<leader>bf',
+      function() require("telescope.builtin").buffers() end,
+      mode = { "n" }
+    },
+    {
+      '<leader>ff',
       function() require('telescope.builtin').git_files() end,
       mode = { "n" }
     },
